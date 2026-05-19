@@ -17,15 +17,9 @@ let menuOpen = false;
 burger.addEventListener('click', () => {
   menuOpen = !menuOpen;
   mobileMenu.classList.toggle('open', menuOpen);
-  // Animate burger lines
-  const spans = burger.querySelectorAll('span');
-  if (menuOpen) {
-    spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-  } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-  }
+  burger.classList.toggle('open', menuOpen);
+  burger.setAttribute('aria-expanded', String(menuOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!menuOpen));
 });
 
 // Close menu on mobile link click
@@ -33,8 +27,9 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => {
     menuOpen = false;
     mobileMenu.classList.remove('open');
-    const spans = burger.querySelectorAll('span');
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
   });
 });
 

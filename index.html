@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="#" class="nav__logo">
-      <img src="./assets/starecas3 logo.png" alt="StareCas3 Technologies" class="nav__logo-img" />
+      <span class="nav__brand-main">StareCas3</span>
+      <span class="nav__brand-sub">Technologies</span>
     </a>
     <ul class="nav__links">
       <li><a href="#about">About</a></li>
@@ -23,13 +24,13 @@
       <li><a href="#values">Values</a></li>
       <li><a href="#contact" class="nav__cta">Work With Us</a></li>
     </ul>
-    <button class="nav__burger" id="burger" aria-label="Toggle menu">
+    <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
       <li><a href="#about" class="mobile-link">About</a></li>
       <li><a href="#what-we-do" class="mobile-link">What We Do</a></li>
@@ -41,6 +42,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__grid-overlay"></div>
+    <img src="./assets/starecas3 logo.png" alt="" class="hero__watermark" aria-hidden="true" />
     <div class="hero__content">
       <div class="hero__eyebrow">
         <span class="dot"></span> Windhoek, Namibia
@@ -58,37 +60,11 @@
         <a href="#what-we-do" class="btn btn--ghost">See what we do</a>
       </div>
     </div>
-    <div class="hero__visual">
-      <div class="hero__stair s1"></div>
-      <div class="hero__stair s2"></div>
-      <div class="hero__stair s3"></div>
-    </div>
     <div class="hero__scroll-hint">
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
     </div>
   </section>
-
-  <!-- TICKER -->
-  <div class="ticker">
-    <div class="ticker__track">
-      <span>Curious &nbsp;·&nbsp;</span>
-      <span>Driven &nbsp;·&nbsp;</span>
-      <span>Unafraid to Fail &nbsp;·&nbsp;</span>
-      <span>Built in Namibia &nbsp;·&nbsp;</span>
-      <span>Shipping Real Software &nbsp;·&nbsp;</span>
-      <span>Curious &nbsp;·&nbsp;</span>
-      <span>Driven &nbsp;·&nbsp;</span>
-      <span>Unafraid to Fail &nbsp;·&nbsp;</span>
-      <span>Built in Namibia &nbsp;·&nbsp;</span>
-      <span>Shipping Real Software &nbsp;·&nbsp;</span>
-      <span>Curious &nbsp;·&nbsp;</span>
-      <span>Driven &nbsp;·&nbsp;</span>
-      <span>Unafraid to Fail &nbsp;·&nbsp;</span>
-      <span>Built in Namibia &nbsp;·&nbsp;</span>
-      <span>Shipping Real Software &nbsp;·&nbsp;</span>
-    </div>
-  </div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
@@ -265,7 +241,10 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <img src="starecas3_logo.png" alt="StareCas3 Technologies" class="footer__logo" />
+        <div class="footer__brand" aria-label="StareCas3 Technologies">
+          <span class="footer__brand-main">StareCas3</span>
+          <span class="footer__brand-sub">Technologies</span>
+        </div>
         <p class="footer__tagline">Designing, building and shipping commercial software<br />that solves real world problems.</p>
       </div>
       <div class="footer__bottom">
